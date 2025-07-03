@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Datonis Feature Trigger",
+  "version": "1.2",
+  "description": "Trigger a feature tour POST request from button.",
+  "permissions": ["tabs", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "host_permissions": ["https://quality.datonis.io/*"],
+  "icons": {
+    "128": "icon.png"
+  }
+}
