@@ -9,7 +9,7 @@
     "default_icon": "icon.png"
   },
   "host_permissions": [
-    "https://altizonproductivity.ccbcc.com/*",
+    "https://*.ccbcc.com/*",
     "https://*.datonis.io/*"
   ],
   "icons": {
