@@ -16,7 +16,7 @@ This Chrome extension allows you to **unlock pages or functions** on the [Datoni
 
 1. **Clone or Download** this repository:
     ```bash
-    git clone https://github.com/yourusername/datonis-unlock-extension.git
+    git clone https://github.com/Prem07a/LockOut.git
     ```
 
 2. **Open Chrome** and go to: `chrome://extensions`
