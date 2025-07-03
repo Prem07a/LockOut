@@ -5,7 +5,6 @@ triggerBtn.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = tab.url;
 
-    // Updated domain validation to include both datonis.io and altizonproductivity.ccbcc.com
     const allowedDomains = [
       /^https:\/\/[a-zA-Z0-9-]+\.datonis\.io/,
       /^https:\/\/[a-zA-Z0-9-]+\.ccbcc\.com/
@@ -46,8 +45,8 @@ triggerBtn.addEventListener("click", async () => {
     // Determine API endpoint based on domain
     const isAltizonDomain = /^https:\/\/[a-zA-Z0-9-]+\.ccbcc\.com/.test(url);
     const apiEndpoint = isAltizonDomain 
-      ? "https://altizonproductivity.ccbcc.com/api/v1/functions/unlock_pages/execute"
-      : "https://quality.datonis.io/api/v1/functions/unlock_pages/execute";
+      ? "https://altizonconfiguration.ccbcc.com/api/v1/functions/unlock_pages/execute"
+      : "https://configuration.datonis.io/api/v1/functions/unlock_pages/execute";
 
     const response = await fetch(apiEndpoint, {
       method: "POST",
