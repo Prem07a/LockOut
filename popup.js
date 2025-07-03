@@ -8,7 +8,7 @@ triggerBtn.addEventListener("click", async () => {
     // Updated domain validation to include both datonis.io and altizonproductivity.ccbcc.com
     const allowedDomains = [
       /^https:\/\/[a-zA-Z0-9-]+\.datonis\.io/,
-      /^https:\/\/altizonproductivity\.ccbcc\.com/
+      /^https:\/\/[a-zA-Z0-9-]+\.ccbcc\.com/
     ];
     
     const isValidDomain = allowedDomains.some(domain => domain.test(url));
@@ -44,7 +44,7 @@ triggerBtn.addEventListener("click", async () => {
     };
 
     // Determine API endpoint based on domain
-    const isAltizonDomain = /^https:\/\/altizonproductivity\.ccbcc\.com/.test(url);
+    const isAltizonDomain = /^https:\/\/[a-zA-Z0-9-]+\.ccbcc\.com/.test(url);
     const apiEndpoint = isAltizonDomain 
       ? "https://altizonproductivity.ccbcc.com/api/v1/functions/unlock_pages/execute"
       : "https://quality.datonis.io/api/v1/functions/unlock_pages/execute";
