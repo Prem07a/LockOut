@@ -5,16 +5,22 @@ triggerBtn.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = tab.url;
 
-    const allowedDomain = /^https:\/\/[a-zA-Z0-9-]+\.datonis\.io/;
-    if (!allowedDomain.test(url)) {
-      alert("Invalid domain: Please use this extension only on a datonis.io subdomain over HTTPS.");
+    // Updated domain validation to include both datonis.io and altizonproductivity.ccbcc.com
+    const allowedDomains = [
+      /^https:\/\/[a-zA-Z0-9-]+\.datonis\.io/,
+      /^https:\/\/altizonproductivity\.ccbcc\.com/
+    ];
+    
+    const isValidDomain = allowedDomains.some(domain => domain.test(url));
+    if (!isValidDomain) {
+      alert("Invalid domain: Please use this extension only on a datonis.io subdomain or altizonproductivity.ccbcc.com over HTTPS.");
       triggerBtn.disabled = false;
       return;
     }
 
     const match = url.match(/\/v3\/(pages|functions)\/([a-zA-Z0-9_-]+)\/edit/);
     if (!match) {
-      alert("Invalid URL: Please navigate to a valid 'pages' or 'functions' edit screen on Datonis.");
+      alert("Invalid URL: Please navigate to a valid pages or functions edit screen on the supported domains.");
       triggerBtn.disabled = false;
       return;
     }
@@ -37,14 +43,20 @@ triggerBtn.addEventListener("click", async () => {
       report_key: isFunction ? id : null
     };
 
-    const response = await fetch("https://quality.datonis.io/api/v1/functions/unlock_pages/execute", {
+    // Determine API endpoint based on domain
+    const isAltizonDomain = /^https:\/\/altizonproductivity\.ccbcc\.com/.test(url);
+    const apiEndpoint = isAltizonDomain 
+      ? "https://altizonproductivity.ccbcc.com/api/v1/functions/unlock_pages/execute"
+      : "https://quality.datonis.io/api/v1/functions/unlock_pages/execute";
+
+    const response = await fetch(apiEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
 
     if (!response.ok) {
-      let msg = `Request failed (${response.status})`;
+      let msg = `Request failed with status ${response.status}`;
       try {
         const errData = await response.json();
         if (errData && errData.error) msg += `: ${errData.error}`;
@@ -53,7 +65,7 @@ triggerBtn.addEventListener("click", async () => {
     }
 
     const data = await response.json();
-    alert(`${isPage ? "Page" : "Function"} unlocked successfully! please refresh the page to see changes.`);
+    alert(`${isPage ? "Page" : "Function"} unlocked successfully. Please refresh the page to see changes.`);
   } catch (err) {
     alert("Failed to send POST request. Please try again.\n" + (err.message || ""));
   } finally {
