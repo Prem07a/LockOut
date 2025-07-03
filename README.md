@@ -1,8 +1,5 @@
-
 # 🔓 Datonis Unlock Tool - Chrome Extension
-
-This Chrome extension allows you to **unlock pages or functions** on the [Datonis platform](https://quality.datonis.io) directly from the browser. It works by detecting if you're on a supported `edit` URL, and sends a `POST` request to unlock the resource.
-
+It's really not cool to keep your pages or functions locked, so this tool is here to help you unlock them—just with a single click!
 
 
 ## 📸 Preview
@@ -32,7 +29,6 @@ This Chrome extension allows you to **unlock pages or functions** on the [Datoni
 
 ## 📌 Notes
 
-* This extension only runs on the `https://quality.datonis.io` domain.
 * Make sure you're logged in, as the extension relies on your session cookies.
 * This does **not** store any data or require special permissions beyond the domain.
 
