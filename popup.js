@@ -64,7 +64,11 @@ triggerBtn.addEventListener("click", async () => {
     }
 
     const data = await response.json();
-    alert(`${isPage ? "Page" : "Function"} unlocked successfully. Please refresh the page to see changes.`);
+    alert(`${isPage ? "Page" : "Function"} unlocked successfully. The page will refresh automatically.`);
+    
+    // Refresh the active tab after successful execution
+    await chrome.tabs.reload(tab.id);
+    
   } catch (err) {
     alert("Failed to send POST request. Please try again.\n" + (err.message || ""));
   } finally {
