@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Datonis Feature Trigger",
-  "version": "1.2",
+  "version": "1.3",
   "description": "Trigger a feature tour POST request from button.",
   "permissions": ["tabs", "scripting"],
   "action": {
@@ -10,7 +10,9 @@
   },
   "host_permissions": [
     "https://*.ccbcc.com/*",
-    "https://*.datonis.io/*"
+    "https://*.datonis.io/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
   ],
   "icons": {
     "128": "icon.png"

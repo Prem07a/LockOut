@@ -2,58 +2,19 @@
 <html>
 <head>
   <title>Unlock Datonis</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 20px;
-      width: 240px;
-      text-align: center;
-      background-color: #f9f9f9;
-    }
-
-    h3 {
-      font-size: 16px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    button {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .credit {
-      margin-top: 25px;
-      font-size: 12px;
-      color: #666;
-      border-top: 1px solid #ddd;
-      padding-top: 10px;
-    }
-
-    .credit span {
-      font-weight: 600;
-      color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h3>Datonis Unlock Tool</h3>
-  <button id="trigger-btn">Unlock the Page</button>
+  <h3>Datonis Lock Tool</h3>
+  <button id="trigger-btn">Lock to Me</button>
+  
+  <div id="status" class="status"></div>
 
   <div class="credit">
     Created by <span>Prem</span> and <span>Tejas</span>
   </div>
 
+  <script src="config.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
