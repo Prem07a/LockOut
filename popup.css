@@ -1,0 +1,76 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 20px;
+  width: 240px;
+  text-align: center;
+  background-color: #302d4a;
+  color: #e0e0e0;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+button {
+  background-color: #8c58fc;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6c42c5;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.status {
+  margin: 15px 0;
+  font-size: 13px;
+  color: #d6d6d6;
+  background: #383457;
+  padding: 8px;
+  border-radius: 6px;
+  display: none;
+}
+
+.status.show {
+  display: block;
+}
+
+.status.success {
+  background: #03f317;
+  color: #000000;
+}
+
+.status.warning {
+  background: #cbf803;
+  color: #000000;
+}
+
+.status.error {
+  background: #ff0303;
+  color: #000000;
+}
+
+.credit {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #bbbbbb;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.credit span {
+  font-weight: 600;
+  color: #ffffff;
+}
