@@ -32,6 +32,7 @@ const CONFIG = {
   
   allowedDomains: [
     /^https:\/\/[a-zA-Z0-9-]+\.datonis\.io/,
+    /^https:\/\/[a-zA-Z0-9-]+\.datonis\.ai/,
     /^https:\/\/[a-zA-Z0-9-]+\.ccbcc\.com/,
     /^http:\/\/localhost(:\d+)?/,
     /^http:\/\/127\.0\.0\.1(:\d+)?/
