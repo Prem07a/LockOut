@@ -11,6 +11,7 @@
   "host_permissions": [
     "https://*.ccbcc.com/*",
     "https://*.datonis.io/*",
+    "https://*.datonis.ai/*",
     "http://localhost/*",
     "http://127.0.0.1/*"
   ],
