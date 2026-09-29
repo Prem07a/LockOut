@@ -32,7 +32,7 @@ When you encounter a page or function that's locked by someone else:
 
 ## 🌐 Supported Domains
 
-- **Datonis**: `*.datonis.io`
+- **Datonis**: `*.datonis.io` and `*.datonis.ai`
 - **CCCI**: `*.ccbcc.com` 
 - **Development**: `localhost` and `127.0.0.1`
 
